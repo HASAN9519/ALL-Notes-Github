@@ -32,7 +32,7 @@
 
 - Hadoop is an open-source framework for Big Data. It is used for processing massive data in distributed file systems that are linked together. It allows for running applications on clusters.
 
-- A cluster is a collection of computers working together at same to time to perform tasks.
+- A cluster is a collection of computers working together at same time to perform tasks.
 
 - Hadoop is not a database but an ecosystem that can handle processes and jobs in parallel or concurrently. Hadoop is optimized to handle massive quantities of data which could be Structured, tabular data, Unstructured data such as images and videos or Semi-structured data using relatively inexpensive computers.
 
