@@ -1,0 +1,3 @@
+## Definition of Big Data
+
+Big Data is digital trace that gets generated in this digital era. Big Data is a high-volume, high-velocity and high-variety information asset that demands cost-effective and innovative tools for processing. Core features of Big Data are 4 V’s: Velocity, Volume, Variety and Veracity. Big Data creates a fifth V which is Value, when data is collected, stored and processed correctly.
