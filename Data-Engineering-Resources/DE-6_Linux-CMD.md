@@ -802,9 +802,9 @@
 #### Save below code as wish.sh in filesystem
     #! /bin/bash
     echo "Hi $1 $2"
-    #$1 is the first argument passed to the script
+    # $1 is the first argument passed to the script
     echo "$1 is your firstname"
-    #$2 is the second argument passed to the script
+    # $2 is the second argument passed to the script
     echo "$2 is your lastname"
 
 #### Make script executable to everyone
@@ -844,8 +844,6 @@
 #### Make script executable to everyone and Running the script
     chmod +x latest_warnings.sh
     ./latest_warnings.sh
-
-
 
 ## Scheduling Jobs using crontab
 
@@ -967,7 +965,7 @@
     elif [ $a = $b ]
     then
         echo "a is equal to b"
-    else # Here a is not <= b, so a > b
+    else    # Here a is not <= b, so a > b
         echo "a is greater than b"
     fi
 
