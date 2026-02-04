@@ -1006,7 +1006,7 @@
     a=3
     b=3
     c=3
-    if [ $a = $b ] && [ $a = $c ] && [ $b = $c ] # && means "and"
+    if [ $a = $b ] && [ $a = $c ] && [ $b = $c ]    # && means "and"
     then
         echo "a, b, and c are equal"
     else
