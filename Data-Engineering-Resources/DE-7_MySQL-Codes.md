@@ -689,7 +689,7 @@
     # zip file to compress SQL file as "all-database-" suffixed with current timestamp and .gz extension
     zipfile=$backupfolder/all-database-$(date +%d-%m-%Y_%H-%M-%S).gz
 
-    ### Creating a backup using mysqldump command, if operation is successful, compress .sql file into .gz and delete .sql file
+    # Creating a backup using mysqldump command, if operation is successful, compress .sql file into .gz and delete .sql file
     if mysqldump  $DATABASE > $sqlfile ; then
     echo 'Sql dump created'
         # Compress backup 
