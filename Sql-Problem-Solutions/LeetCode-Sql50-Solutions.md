@@ -10,6 +10,8 @@
 
 N.B. make one side non‑integer (1.0, ::numeric or ::decimal) so PostgreSQL does fractional division instead of truncating to zero, columns used in group by should be in select clause if it's not used in aggregation, aggregate functions must go in the HAVING clause after grouping.
 
+N.B. if given problem looks complex, try to solve different parts of it separately using cte and join them later
+
 #### Basic Joins
 
 570. Managers with at Least 5 Direct Reports

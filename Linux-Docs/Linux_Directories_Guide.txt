@@ -1,0 +1,158 @@
+LINUX SYSTEM DIRECTORIES - REFERENCE NOTES
+============================================
+
+Linux follows the FHS (Filesystem Hierarchy Standard), which defines
+where different types of files should live. Below is a breakdown of
+the most important top-level directories and what they represent.
+
+/  (Root)
+------------------------------------------------
+The top of the entire filesystem tree. Every other directory,
+drive, or partition is mounted under this single root — unlike
+Windows, there are no separate drive letters (C:, D:, etc.).
+
+/bin  (Essential User Binaries)
+------------------------------------------------
+Contains essential command binaries needed by all users, even in
+single-user/recovery mode (e.g., ls, cp, mv, cat, bash).
+Use case: Running basic system commands.
+Note: On modern distros, /bin is often a symlink to /usr/bin.
+
+/sbin  (System Binaries)
+------------------------------------------------
+Holds essential binaries for system administration, typically
+usable only by root (e.g., fdisk, reboot, iptables, ifconfig).
+Use case: System maintenance and configuration tasks.
+
+/etc  (Configuration Files)
+------------------------------------------------
+Stores system-wide configuration files and shell scripts used to
+boot and configure the system (e.g., /etc/passwd, /etc/fstab,
+/etc/hostname, /etc/ssh/sshd_config).
+Use case: Editing system or application configs.
+
+/home  (User Home Directories)
+------------------------------------------------
+Contains personal directories for each non-root user
+(e.g., /home/alice, /home/bob). Stores personal files, desktop
+settings, and user-specific configs (dotfiles).
+Use case: Personal storage and user-level settings.
+
+/root  (Root User's Home)
+------------------------------------------------
+The home directory for the root (superuser) account. Separate
+from /home for security and to ensure availability even if /home
+is on a separate, unmounted partition.
+Use case: Root user's personal files and configs.
+
+/var  (Variable Data)
+------------------------------------------------
+Contains files that change frequently during system operation:
+logs (/var/log), mail spools, print queues, and cached data.
+Use case: Checking logs (/var/log/syslog), monitoring disk usage
+growth over time.
+
+/tmp  (Temporary Files)
+------------------------------------------------
+Used for temporary files created by the system or applications.
+Often cleared on reboot.
+Use case: Scratch space for programs; not for persistent storage.
+
+/usr  (User System Resources)
+------------------------------------------------
+Contains the majority of user-installed applications, libraries,
+documentation, and binaries not essential for booting.
+Subdirectories include:
+  /usr/bin   - non-essential user binaries
+  /usr/sbin  - non-essential system binaries
+  /usr/lib   - libraries for /usr/bin and /usr/sbin
+  /usr/local - locally compiled/installed software
+Use case: Where most installed software actually lives.
+
+/lib, /lib64  (Shared Libraries)
+------------------------------------------------
+Contains shared library files (.so) needed by binaries in /bin
+and /sbin, plus kernel modules.
+Use case: Supporting essential system binaries at boot time.
+
+/opt  (Optional/Add-on Software)
+------------------------------------------------
+Used for installing third-party or self-contained software
+packages that don't follow the standard FHS layout
+(e.g., /opt/google/chrome).
+Use case: Manually installed commercial or bundled applications.
+
+/dev  (Device Files)
+------------------------------------------------
+Contains special files representing hardware devices
+(e.g., /dev/sda for a disk, /dev/null, /dev/tty).
+Use case: Low-level hardware interaction; Linux treats devices
+as files.
+
+/proc  (Process Information - Virtual FS)
+------------------------------------------------
+A virtual filesystem providing real-time information about
+running processes and kernel parameters (e.g., /proc/cpuinfo,
+/proc/meminfo, /proc/[PID]/).
+Use case: Debugging, monitoring system/process state.
+
+/sys  (System - Virtual FS)
+------------------------------------------------
+Another virtual filesystem exposing information about devices,
+drivers, and kernel subsystems.
+Use case: Kernel/hardware introspection and configuration.
+
+/mnt  (Temporary Mount Point)
+------------------------------------------------
+A conventional location for administrators to temporarily mount
+filesystems (e.g., an external drive).
+Use case: Manual, short-term mounting.
+
+/media  (Removable Media)
+------------------------------------------------
+Where the system automatically mounts removable media like USB
+drives, CDs, and DVDs.
+Use case: Auto-mounted external storage.
+
+/boot  (Boot Loader Files)
+------------------------------------------------
+Contains files required to boot the system: the Linux kernel
+(vmlinuz), initial RAM disk (initrd/initramfs), and bootloader
+configs (GRUB).
+Use case: Boot troubleshooting, kernel updates.
+
+/srv  (Service Data)
+------------------------------------------------
+Holds data for services provided by the system, such as files
+served by a web server or FTP server.
+Use case: Hosting site/service data.
+
+/run  (Runtime Data)
+------------------------------------------------
+A tmpfs (memory-based) directory holding runtime data since the
+last boot, like process IDs (PIDs) and lock files.
+Use case: Tracking active system state during a session.
+
+QUICK SUMMARY TABLE
+------------------------------------------------
+/bin    -> essential commands for all users
+/sbin   -> essential admin commands
+/etc    -> configuration files
+/home   -> regular users' personal files
+/root   -> root user's personal files
+/var    -> logs, caches, variable data
+/tmp    -> temporary files
+/usr    -> installed software and libraries
+/lib    -> shared libraries
+/opt    -> optional third-party software
+/dev    -> device files
+/proc   -> live process/kernel info (virtual)
+/sys    -> kernel/device info (virtual)
+/mnt    -> manual mount point
+/media  -> removable media mount point
+/boot   -> kernel and bootloader files
+/srv    -> service-hosted data
+/run    -> runtime session data
+
+Tip: You can always check FHS details on your system with:
+  man hier
