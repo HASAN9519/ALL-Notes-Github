@@ -151,7 +151,8 @@ docker pull alpine@sha256:02bb6f428431fbc2809c5d1b41eab5a68350194fb508869a33cb1a
 
 ```
 # Docker Compose commands
-# Docker Compose is a tool that define and run multiple containers together using a YAML file called docker-compose.yml (or compose.yaml)
+# Docker Compose is a tool that define and run multiple containers 
+# together using a YAML file called docker-compose.yml (or compose.yaml)
 # build or rebuild images
 docker compose build        # only builds container, not start them
 docker compose up -d        # start container
